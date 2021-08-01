@@ -44,7 +44,7 @@ function getUsers(users) {
     return msg;
 }
 
-app.post("/addUser", (req, res) => {
+app.post("/users", (req, res) => {
     const query = req.query;
     const user = {name: query.name, surname: query.surname}
 
@@ -53,7 +53,7 @@ app.post("/addUser", (req, res) => {
     res.send("User added");
 });
 
-app.put("/updateUser/:id", (req, res) => {
+app.put("/users/:id", (req, res) => {
     const params = req.params;
     const query = req.query;
     const update = {name: query.name, surname: query.surname}
@@ -62,7 +62,7 @@ app.put("/updateUser/:id", (req, res) => {
     res.send("User updated");
 });
 
-app.delete("/deleteUser/:id", (req, res) => {
+app.delete("/users/:id", (req, res) => {
     const params = req.params;
 
     deleteUser(params.id, users);
